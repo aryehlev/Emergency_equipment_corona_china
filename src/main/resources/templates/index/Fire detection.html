@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Demolitiontool</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		.container {
+			width: 1000px;
+			height: 270px;
+		}
+
+		.divcss5-left {
+			float: left;
+			width: 600px;
+			height: 50px;
+		}
+
+		.divcss5-right {
+			float: left;
+			width: 400px;
+			height: 150px;
+		}
+
+		.photo {
+			position: absolute;
+			left: 384px;
+			top: 16px;
+			width: 220px;
+			height: 184px;
+		}
+
+		.photo2 {
+			position: absolute;
+			left: 345px;
+			top: 285px;
+			width: 248px;
+			height: 221px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="divcss5-left">
+			<img th:src="@{/static/photo/ywcgq.png}" height="666" width="1000" class="photo">
+		</div>
+		<div class="divcss5-right">
+			<p>1.烟雾传感器</p>
+			<p>通过监测烟雾的浓度来实现火灾防范的，烟雾报警器内部采用离子式烟雾传感，离子式烟雾传感器是一种先进技术，工作稳定可靠的传感器，被广泛运用到各种消防报警系统中，性能远优于气敏电阻类的火灾报警器</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="divcss5-left">
+			<img th:src="@{/static/photo/wdcgq.png}" height="232" width="500" class="photo2">
+		</div>
+		<div class="divcss5-right">
+			<p>2.温度传感器</p>
+			<p>能感受温度并转换成可用输出信号的传感器。温度传感器是温度测量仪表的核心部分，品种繁多。按测量方式可分为接触式和非接触式两大类，按照传感器材料及电子元件特性分为热电阻和热电偶两类。</p>
+		</div>
+	</div>
+</body>
+
+</html>

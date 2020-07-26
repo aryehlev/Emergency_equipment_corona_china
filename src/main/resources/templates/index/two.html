@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link
+	href="https://cdn.bootcss.com/twitter-bootstrap/3.0.1/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.bootcss.com/twitter-bootstrap/3.0.1/css/bootstrap.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.bootcss.com/twitter-bootstrap/3.0.1/css/bootstrap-theme.css"
+	rel="stylesheet">
+<link
+	href="https://cdn.bootcss.com/twitter-bootstrap/3.0.1/css/bootstrap-theme.min.css"
+	rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script
+	src="https://cdn.bootcss.com/twitter-bootstrap/3.0.1/js/modal.min.js"></script>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<style>
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding: 12px 16px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.block {
+	display: block;
+	padding: 5px;
+}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<ul class="breadcrumb">
+					<li><a href="one">搜索</a></li>
+					<li><a href="two">使用说明</a></li>
+				</ul>
+				<div class="row clearfix">
+					<div class="col-md-12 column">
+						<h3 class="text-center">共享应急装备</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+				<ul class="nav nav-tabs">
+					<li class="dropdown"><a href="#">消防类</a>
+						<div class="dropdown-content">
+							<a class='block' th:href="@{/change(name=a)}">灭火器</a>
+							<a class='block' th:href="@{/change(name=b)}">破拆工具</a>
+							<a class='block' th:href="@{/change(name=c)}">火警检测类</a>
+						</div></li>
+					<li><a href="#">地震类</a></li>
+					<li><a href="#">人身安全类</a></li>
+				</ul>
+				<iframe th:src="${src}" style="width:1300px;height:1000px;"></iframe>
+		
+			</div>
+		</div>
+	</div>
+</body>
+</html>

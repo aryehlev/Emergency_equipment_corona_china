@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace和接口全类名保持一致-->
+<mapper namespace="cn.lss.demo001.dao.StudentDao">
+    <select id="selectAll" resultType="cn.lss.demo001.entity.Student">
+          select * from student
+    </select>
+
+    <select id="findStudentByLimit" resultType="cn.lss.demo001.entity.Student">
+        select * from student limit #{page}  , #{limit}
+    </select>
+
+    <select id="selectOne" resultType="cn.lss.demo001.entity.Student">
+        select * from student where id = #{id}
+    </select>
+
+    <select id="count" resultType="Integer">
+          select count(*) as num from student
+     </select>
+
+
+    <select id="search" parameterType="String" resultType="cn.lss.demo001.entity.Student">
+        select * from student where id = #{keyword} or sname like concat('%',#{keyword},'%') or phone = #{keyword}
+    </select>
+
+    <delete id="delete">
+           delete from student where id = #{id}
+     </delete>
+
+    <update id="update">
+          update student set sname = #{sname} ,sage = #{sage},phone = #{phone} where id = #{id}
+     </update>
+
+    <insert id="insert">
+          insert into student(sname,sage,phone) VALUES (#{sname},#{sage},#{phone})
+     </insert>
+
+
+
+</mapper>

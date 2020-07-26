@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace和接口全类名保持一致-->
+<mapper namespace="cn.lss.demo001.dao.EquipmentDao">
+    <select id="searchByName" parameterType="String" resultType="cn.lss.demo001.entity.Equipment">
+          select * from equipment where  name like concat('%',#{name},'%')
+    </select>
+
+    <select id="searchByTypeName" parameterType="String" resultType="cn.lss.demo001.entity.Equipment">
+          select * from equipment  where category_name like concat('%',#{type_name},'%')
+    </select>
+
+
+
+
+    <select id="searchByCity" parameterType="String" resultType="cn.lss.demo001.entity.Equipment">
+        select * from equipment where  city like concat('%',#{city},'%');
+    </select>
+
+    <delete id="delete">
+           delete from equipment where id = #{id}
+     </delete>
+
+    <update id="update">
+          update equipment set city = #{city} ,province = #{province},available = #{available},street = #{street},number = #{number},description = #{description}
+            ,longitude = #{longitude},latitude = #{latitude }, category_name = #{categoryName}, name = #{name} where id = #{id}
+     </update>
+
+    <insert id="insert">
+          insert into equipment(city,province,available,street,number,description,longitude,latitude,category_name,name) VALUES (#{city},#{province},#{available},#{street},
+          #{number},#{description},#{longitude},#{latitude},#{categoryName},#{name});
+     </insert>
+
+
+
+</mapper>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="index/head_nav::head"></head>
+<body>
+    <!--<h1 th:text="${name}">原来的值</h1>-->
+    <nav th:replace="index/head_nav::nav">
+
+    </nav>
+    <div style="margin: 20px auto; width: 98%">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">name</th>
+                <th scope="col">年龄</th>
+                <th scope="col">电话</th>
+                <th scope="col">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="stu : ${students}">
+                <th scope="row" th:text="${stu.id}"></th>
+                <td th:text="${stu.sname}"></td>
+                <td th:text="${stu.sage}"></td>
+                <td th:text="${stu.phone}"></td>
+                <td>
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group mr-2" role="group" aria-label="Second group">
+                            <!-- Button trigger modal -->
+                            <a type="button" class="btn btn-primary" th:href="@{'update.html?id=' + ${stu.id}}">修改</a>
+                            <a type="button" class="btn btn-info" th:href="@{'detail.html?id='+${stu.id}}">查看</a>
+                            <a type="button" class="btn btn-danger" th:href="@{'delete?id='+${stu.id}}">删除</a>
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination" >
+            <li th:class="${indexPage==1}?'disabled page-item' : 'page-item'"><a class="page-link" th:href="@{'test.html?page=' + ${indexPage-1}}">上一页</a></li>
+            <li class="page-item" th:if="${indexPage-3 >=1}" ><a class="page-link" th:href="@{'test.html?page=' + ${indexPage-3}}" th:text="${indexPage -3}" >1</a></li>
+            <li class="page-item" th:if="${indexPage-2 >=1}" ><a class="page-link" th:href="@{'test.html?page=' + ${indexPage-2}}" th:text="${indexPage -2}" >1</a></li>
+            <li class="page-item" th:if="${indexPage-1 >=1}" ><a class="page-link" th:href="@{'test.html?page=' + ${indexPage-1}}" th:text="${indexPage -1}" >1</a></li>
+            <li class="page-item active"><a class="page-link" href="#" th:text="${indexPage}" >1</a></li>
+            <li class="page-item" th:if="${indexPage+1 <=totalPage}" ><a class="page-link" th:href="@{'test.html?page=' + ${indexPage+1}}" th:text="${indexPage +1}" >1</a></li>
+            <li class="page-item" th:if="${indexPage+2 <=totalPage}" ><a class="page-link" th:href="@{'test.html?page=' + ${indexPage+2}}" th:text="${indexPage +2}" >1</a></li>
+            <li class="page-item" th:if="${indexPage+3 <=totalPage}" ><a class="page-link" th:href="@{'test.html?page=' + ${indexPage+3}}" th:text="${indexPage +3}" >1</a></li>
+
+            <li th:class="${indexPage==totalPage}?'disabled page-item' : 'page-item'" ><a class="page-link" th:href="@{'test.html?page=' + ${indexPage+1}}">下一页</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" th:src="@{/static/plugin/bootstrap/4.3.1/js/jquery-3.3.1.slim.min.js}"  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" th:src="@{/static/plugin/bootstrap/4.3.1/js/bootstrap.bundle.min.js}"  crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" th:src="@{/static/plugin/bootstrap/4.3.1/js/bootstrap.min.js}"  crossorigin="anonymous"></script>
+</body>
+</html>

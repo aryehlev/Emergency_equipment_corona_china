@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Demolitiontool</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		.container {
+			width: 1000px;
+			height: 270px;
+		}
+
+		.divcss5-left {
+			float: left;
+			width: 600px;
+			height: 50px;
+		}
+
+		.divcss5-right {
+			float: left;
+			width: 400px;
+			height: 150px;
+		}
+
+		.photo {
+			position: absolute;
+			left: 424px;
+			top: 15px;
+		}
+
+		.photo2 {
+			position: absolute;
+			left: 417px;
+			top: 286px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="divcss5-left">
+			<img th:src="@{/static/photo/xff.png}" height="176" width="181" class="photo">
+		</div>
+		<div class="divcss5-right">
+			<p>1、消防斧</p>
+			<p>一种清理着火或易燃材料，切断火势蔓延的工具，还可以劈开被烧变形的门窗，解救被困的人。它的主要形状类似于斧子，所以叫消防斧。</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="divcss5-left">
+			<img th:src="@{/static/photo/qggj1.png}" height="178" width="186" class="photo2">
+		</div>
+		<div class="divcss5-right">
+			<p>2、切割工具</p>
+			<p>以电作为动力，用来切割木料、石料、钢材等的切割工具，边缘有尖齿。分手固定式和手提式，锯条一般是用工具钢制成，有圆形的，条形以及链式等多种。</p>
+		</div>
+	</div>
+</body>
+
+</html>
